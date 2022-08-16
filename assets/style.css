@@ -1,5 +1,20 @@
+body {
+  background-color: gainsboro;
+}
+
+.jumbotron {
+  font-size: 80px;
+  background-color: cornflowerblue;
+  text-align: center;
+  padding: 5px;
+  margin: 3px;
+}
+
 .form-control {
   padding: 3px;
+}
+.card {
+  background-color: cornflowerblue;
 }
 
 .far {
@@ -12,4 +27,24 @@
   margin: 15px;
   font-size: 20px;
   font-weight: 400;
+}
+
+button {
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  display: block;
+  background-color: ghostwhite;
+}
+
+.col {
+  border-radius: 5px;
+  background-color: cornflowerblue;
+  padding: 5px;
+}
+
+#forecast {
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 5px;
 }

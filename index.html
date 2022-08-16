@@ -43,12 +43,12 @@
         </form>
       <input type="submit" value="Search" class="btn btn-secondary m-3">
       <div class="col-12 h5 text-center">Search History</div>
-      <ul class = "col-12 border border-dark text-center bg-secondary" id="history" style="list-style:none;"></ul>
+      <ul class = "col-12  text-center" id="history" style="list-style:none;"></ul>
     </div>
       </div>
-      <div class="col-md-8 col-xl-9">
-<div class="border border-dark"> 
-<h1 class="display-5 p-3" id="cityName">City</h1>
+      <div class="col col-md-8 col-xl-9"> 
+<h1 class="display-4 p-3" id="cityName">City</h1>
+<div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
 <div id="currentDate"></div>
 <ul class="list-group list-group-flush">
   <li class="list-group-item" id="temperature">Temperature:</li>
@@ -59,26 +59,27 @@
 </div>
 </section>
 <section class="container d-flex flex-row-reverse"> 
-<div class="col-xl-10">
-  <div class="border border-dark "> 
+<div class="col col-xl-10">
     <h2 class="display-4">5 Day Forecast:</h2> 
-    </div>
-    </div>
     <div class="row" id="forecast">
-      <div class="col-sm">Day 1</div>
-        <div class="col-sm">Day 2</div>
-        <div class="col-sm">Day 3</div>
-        <div class="col-sm">Day 4</div>
-        <div class="col-sm">Day 5</div>
+      <div class="col-sm" id="forecast-1">Day 1</div>
+        <div class="col-sm" id="forecast-2">Day 2</div>
+        <div class="col-sm" id="forecast-3">Day 3</div>
+        <div class="col-sm" id="forecast-4">Day 4</div>
+        <div class="col-sm" id="forecast-5">Day 5</div>
       </div>
     </div>
+    </div>
+    </div>
+   
 </div>
 </div>
+
   
 </div>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src ="./script.js"></script>
+    <script src ="./assets/script.js"></script>
   </body>
 </html>
