@@ -6,6 +6,8 @@ var temperature = document.querySelector("#temperature");
 var wind = document.querySelector("#wind");
 var humidity = document.querySelector("#humidity");
 var uvIndex = document.querySelector("#uv");
+var mainContainer = document.querySelector(".mainContainer");
+mainContainer.style.display = "none";
 
 // this allows the current date to be displayed
 var currentDate = moment().format("MMM Do, YYYY");
@@ -82,32 +84,50 @@ function getWeather(coord) {
       showForecast(data.daily);
       // add weather details - uvi
       uvIndex.textContent = "UV index: " + data.current.uvi;
+      console.log(data.current.uvi);
+      var uvEl = parseFloat(data.current.uvi);
+      console.log(uvEl);
       var uvColor = "green";
-      if (uvIndex >= 2) {
+      if (uvEl <= 2) {
         uvColor = "green";
-      } else if (uvColor >= 5) {
+        uvIndex.classList.add("bg-success");
+        console.log("green");
+      } else if (uvEl <= 5) {
         uvColor = "yellow";
-      } else if (uvIndex >= 7) {
+        uvIndex.classList.add("bg-warning");
+      } else if (uvEl <= 7) {
         uvColor = "orange";
-      } else if (uvIndex >= 11) {
+        uvIndex.classList.add("bg-warning");
+      } else if (uvEl <= 11) {
         uvColor = "red";
+        uvIndex.classList.add("bg-danger");
       }
     });
 }
 
 function showForecast(data) {
+  var day = 1;
   for (let index = 1; index <= 5; index++) {
     const element = data[index];
-    // weather element created dynamically
+    //weather element created dynamically
+    var iconcode = element.weather[0].icon;
+    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+    var imageIcon = $("<img>").attr("src", iconurl);
+    var title = $("<h4>");
+    title.text(moment().add(day, "days").format("MMM D"));
+    day += 1;
     var windEl = $("<li>").text("Wind: " + element.wind_speed + " MPH");
-    windEl.attr("class", "list-group-item");
+    windEl.attr("class", "list-group-item", "list-style:none");
     var tempEl = $("<li>").text("Temp: " + element.temp.day + " F");
     tempEl.attr("class", "list-group-item");
     var humidityEl = $("<li>").text("Humidity: " + element.humidity + " %");
-    humidityEl.attr("class", "list-group-item");
+    humidityEl.attr("class", "list-group-item ");
     var uvEl = $("<li>").text("Uv Index: " + element.uvi);
     uvEl.attr("class", "list-group-item");
     var ulEl = $("<ul class='list-group list-group-flush'>");
+
+    ulEl.append(title);
+    ulEl.append(imageIcon);
     ulEl.append(windEl);
     ulEl.append(tempEl);
     ulEl.append(humidityEl);
@@ -118,7 +138,13 @@ function showForecast(data) {
   }
 }
 
-searchButton.addEventListener("click", getApi);
+searchButton.addEventListener("click", function (event) {
+  console.log(event.target);
+  event.preventDefault();
+  mainContainer.style.display = "block";
+  getApi();
+  //if statement for if data is there clear
+});
 
 $("#history").on("click", "button", function (event) {
   var cityName = $(this).text();

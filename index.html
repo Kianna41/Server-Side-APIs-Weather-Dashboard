@@ -18,68 +18,122 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" 
-    href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Weather Dashboard</title>
+    <!--this is the header-->
   </head>
+
   <header>
-    <div class="jumbotron jumbotron-fluid text-center">
-      <div class="container">
-        <h1 class="display-4">Weather Dashboard</h1>
-        
-      </div>
+    <div class="jumbotron text-center">
+      <h1 class="display-4 bg-info">Weather Dashboard</h1>
     </div>
   </header>
-  <body>
-    <section class="container m-3 p-3"> 
-    <div class="row">
-      <div class="col-md-4 col-xl-3">
-        <div class="card"> 
-          <h2 class="card-header display-5">Search For A City:</h2>
-        <form>
-          <div class="list-group p-2">
-          <input name="text" class="inputValue" placeholder="New York">
-        </div>
-        </form>
-      <input type="submit" value="Search" class="btn btn-secondary m-3">
-      <div class="col-12 h5 text-center">Search History</div>
-      <ul class = "col-12  text-center" id="history" style="list-style:none;"></ul>
-    </div>
-      </div>
-      <div class="col col-md-8 col-xl-9"> 
-<h1 class="display-4 p-3" id="cityName">City</h1>
-<div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
-<div id="currentDate"></div>
-<ul class="list-group list-group-flush">
-  <li class="list-group-item" id="temperature">Temperature:</li>
-  <li class="list-group-item" id="wind">Wind:</li>
-  <li class="list-group-item" id="humidity">Humidity:</li>
-  <li class="list-group-item" id="uv">UV Index:</li>
-</ul>
-</div>
-</section>
-<section class="container d-flex flex-row-reverse"> 
-<div class="col col-xl-10">
-    <h2 class="display-4">5 Day Forecast:</h2> 
-    <div class="row" id="forecast">
-      <div class="col-sm" id="forecast-1">Day 1</div>
-        <div class="col-sm" id="forecast-2">Day 2</div>
-        <div class="col-sm" id="forecast-3">Day 3</div>
-        <div class="col-sm" id="forecast-4">Day 4</div>
-        <div class="col-sm" id="forecast-5">Day 5</div>
-      </div>
-    </div>
-    </div>
-    </div>
-   
-</div>
-</div>
 
-  
-</div>
-</section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src ="./assets/script.js"></script>
+  <body>
+    <!--this is the sidebar to search for a city-->
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4" style="padding-left: 50px; padding-right: 50px">
+          <div class="card bg-info">
+            <h2 class="card-header display-5 bg-secondary">
+              Search For A City:
+            </h2>
+            <form>
+              <div class="list-group p-2">
+                <input name="text" class="inputValue" placeholder="New York" />
+              </div>
+            </form>
+            <input type="submit" value="Search" class="btn btn-secondary m-3" />
+            <div class="col-12 h5 text-center">Search History</div>
+            <ul
+              class="col-12 text-center"
+              id="history"
+              style="list-style: none"
+            ></ul>
+          </div>
+        </div>
+        <div class="mainContainer col col-sm-8" style="padding: 15px">
+          <div
+            class="container-fluid bg-info text-center align-content-center justify-content-center"
+          >
+            <h1 class="display-4 p-3" id="cityName">City</h1>
+            <div id="icon"><img id="wicon" src="" alt="Weather icon" /></div>
+            <h2 id="currentDate"></h2>
+
+            <ul class="list-group list-group-flush">
+              <span style="padding: 20px">
+                <li
+                  class="list-group-item rounded"
+                  id="temperature"
+                  style="background-color: #ced4da"
+                >
+                  Temperature:
+                </li>
+                <li
+                  class="list-group-item rounded"
+                  id="wind"
+                  style="background-color: #ced4da"
+                >
+                  Wind:
+                </li>
+                <li
+                  class="list-group-item rounded"
+                  id="humidity"
+                  style="background-color: #ced4da"
+                >
+                  Humidity:
+                </li>
+                <li
+                  class="list-group-item rounded"
+                  id="uv"
+                  style="background-color: #ced4da"
+                >
+                  UV Index:
+                </li>
+              </span>
+            </ul>
+          </div>
+          <div class="container-fluid mt-4 bg-info">
+            <h2
+              class="display-4 text-center align-content-center justify-content-center"
+            >
+              5 Day Forecast:
+            </h2>
+            <section id="forecast" class="box row w-100 p-0 m-0 h-auto">
+              <div
+                class="card p-4 m-3 text-center align-content-center justify-content-center"
+                style="background-color: #ced4da"
+                id="forecast-1"
+              ></div>
+              <div
+                class="card p-4 m-3 text-center align-content-center justify-content-center"
+                style="background-color: #ced4da"
+                id="forecast-2"
+              ></div>
+              <div
+                class="card p-4 m-3 text-center align-content-center justify-content-center"
+                style="background-color: #ced4da"
+                id="forecast-3"
+              ></div>
+              <div
+                class="card p-4 m-5 text-center align-content-center justify-content-center"
+                style="float: right; background-color: #ced4da"
+                id="forecast-4"
+                <div
+                id="wicon2"
+              ></div>
+              <div
+                class="card p-4 m-5 text-center align-content-center justify-content-center"
+                style="background-color: #ced4da"
+                id="forecast-5"
+              ></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>
