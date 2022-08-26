@@ -18,4 +18,8 @@ This was accomplished by:
 
 Mock-up:
 
-<img src="./assets/assets/Screen Recording 2022-08-26 at 12.42.53 PM.zip" alt="Weather Screen Record" width="500" height="600">
+
+
+
+https://user-images.githubusercontent.com/107634328/186958342-d6df043b-6a60-45b1-89f6-c0a9d01176db.mov
+
